@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <div className="relative items-center w-full h-[95vh] bg-[url('src/assets/bg.jpg')] bg-cover bg-center bg-no-repeat">
-      <NavbarD />
       <div className="flex flex-col items-center justify-center h-[65vh]">
         <motion.h1
           animate={{

@@ -43,7 +43,7 @@ export default function NavbarD() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 w-full">
+    <div className="sticky top-0 z-50 w-full -mt-20">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -79,13 +79,7 @@ export default function NavbarD() {
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full">
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
+                variant="dark"
                 className="w-full">
                 Book a call
               </NavbarButton>
