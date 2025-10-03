@@ -34,7 +34,7 @@ function Counter({ endValue, label }) {
 
 export default function StatsSection() {
   return (
-    <section className="w-full py-10 bg-white md:px-6 px-10 dark:bg-zinc-900">
+    <section className="w-full lg:mt-12 py-10 bg-white md:px-6 px-10 dark:bg-zinc-900">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto bg-white shadow-lg rounded-xl">
         <Counter endValue={100} label="Bookings Completed" />
         <Counter endValue={150} label="Happy Customers" />

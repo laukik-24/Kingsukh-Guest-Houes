@@ -7,6 +7,7 @@ import NavbarD from "./components/NavbarD";
 import StatsSection from "./components/AnimatedNo";
 import ContactSection from "./components/Contact";
 import RoomsSection from "./components/RoomSection";
+import ServicesSection from "./components/Services";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <CheckAvailability />
       <AboutUs />
       <RoomsSection />
+      <ServicesSection />
       <StatsSection />
       <Gallery />
       <ContactSection />
