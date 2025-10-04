@@ -20,7 +20,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full bg-gray-50 py-16 px-6 flex flex-col md:flex-row justify-center items-center gap-50">
+    <section className="w-full bg-gray-50 py-16 px-6 flex flex-col md:flex-row justify-center items-center gap-10 lg:gap-50">
       {/* Left Section */}
       <div className="flex flex-col justify-center max-w-lg space-y-6">
         <div>

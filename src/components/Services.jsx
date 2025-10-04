@@ -46,7 +46,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <div id="services" className="w-full relative bg-white">
+    <div id="services" className="w-full relative">
       {/* Soft Green Glow */}
       <div
         className="absolute inset-0 z-0"
