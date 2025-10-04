@@ -1,22 +1,60 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import home from "../assets/image.png"; // floating robot
 import serviceVideo from "../assets/1.jpg"; // replace with actual video thumbnail
 import icon2 from "../assets/24Icon.png"; // Personalized Experiences icon
-import { Shield, Clock, Utensils, Map } from "lucide-react";
+import { Shield, Utensils, Map } from "lucide-react";
+
+const services = [
+  {
+    title: "High Class Security",
+    icon: <Shield className="w-8 h-8 text-blue-500" strokeWidth={2} />,
+    bg: "bg-blue-100",
+  },
+  {
+    title: "24 Hours Room Service",
+    icon: <img src={icon2} className="w-8" alt="" />,
+    bg: "bg-pink-100",
+  },
+  {
+    title: "Restaurant",
+    icon: <Utensils className="w-8 h-8 text-purple-500" strokeWidth={2} />,
+    bg: "bg-purple-100",
+  },
+  {
+    title: "Tourist Guide Support",
+    icon: <Map className="w-8 h-8 text-red-500" strokeWidth={2} />,
+    bg: "bg-red-100",
+  },
+];
 
 export default function ServicesSection() {
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.3, // delay between each service
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: 50 }, // start 50px to the right
+    show: { opacity: 1, x: 0, transition: { duration: 0.5 } }, // slide to natural position
+  };
+
   return (
     <div id="services" className="w-full relative bg-white">
       {/* Soft Green Glow */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `
-        radial-gradient(circle 500px at 30% 400px, #7fb98f, transparent)
-      `,
+          backgroundImage: `radial-gradient(circle 500px at 30% 400px, #7fb98f, transparent)`,
         }}
       />
-      <section className="w-full  text-black py-20 px-8 relative overflow-hidden">
+      <section className="w-full text-black py-20 px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center md:text-left mb-16 relative">
@@ -48,54 +86,28 @@ export default function ServicesSection() {
             </div>
 
             {/* Right Side - Service Details */}
-            <div className="space-y-10">
-              {/* Service 1 */}
-              <div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                    <Shield className="w-8 h-8 text-blue-500" strokeWidth={2} />
+            <motion.div
+              className="space-y-10"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }} // triggers when 20% is in view
+            >
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="flex items-center gap-4 group">
+                  <div
+                    className={`${service.bg} w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg`}>
+                    {service.icon}
                   </div>
                   <h3 className="text-2xl font-semibold mb-2">
-                    High Class Security
+                    {service.title}
                   </h3>
-                </div>
-              </div>
-              {/* Service 2 */}
-              <div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                    {/* <Clock className="w-8 h-8 text-pink-500" strokeWidth={2} /> */}
-                    <img src={icon2} className="w-8" alt="" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-2">
-                    24 Hours Room Service
-                  </h3>
-                </div>
-              </div>
-              {/* Service 3 */}
-              <div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                    <Utensils
-                      className="w-8 h-8 text-purple-500"
-                      strokeWidth={2}
-                    />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-2">Restaurant</h3>
-                </div>
-              </div>
-              {/* Service 4 */}
-              <div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                    <Map className="w-8 h-8 text-red-500" strokeWidth={2} />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-2">
-                    Tourist Guide Support
-                  </h3>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>

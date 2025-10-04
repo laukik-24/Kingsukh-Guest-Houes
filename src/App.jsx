@@ -8,6 +8,7 @@ import StatsSection from "./components/AnimatedNo";
 import ContactSection from "./components/Contact";
 import RoomsSection from "./components/RoomSection";
 import ServicesSection from "./components/Services";
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <StatsSection />
       <Gallery />
       <ContactSection />
+      <Map />
       <Footer />
     </>
   );
