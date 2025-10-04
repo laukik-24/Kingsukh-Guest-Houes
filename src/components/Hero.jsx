@@ -1,10 +1,13 @@
 import React from "react";
 import NavbarD from "./NavbarD";
 import { motion } from "framer-motion";
+import bg from "../assets/bg.jpg";
 
 const Hero = () => {
   return (
-    <div className="relative items-center w-full h-[95vh] bg-[url('src/assets/bg.jpg')] bg-cover bg-center bg-no-repeat">
+    <div
+      className="relative items-center w-full h-[95vh]  bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bg})` }}>
       <div className="flex flex-col items-center justify-center h-[65vh]">
         <motion.h1
           animate={{
