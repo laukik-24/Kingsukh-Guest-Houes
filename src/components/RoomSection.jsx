@@ -1,22 +1,25 @@
 import RoomCard from "./ui/RoomCard";
 import { motion } from "framer-motion";
+import service from "../assets/service.jpg";
+import recep from "../assets/recep.jpg";
+import room1 from "../assets/room1.jpg";
 
 export default function RoomsSection() {
   const rooms = [
     {
-      img: "src/assets/service.jpg",
+      img: service,
       title: "Cozy Haven Room",
       desc: "Escape to comfort lorem in our Cozy Haven Room, a snug loren retreat designed for intimate relaxation.",
       price: 1000,
     },
     {
-      img: "src/assets/recep.jpg",
+      img: recep,
       title: "Spacious Serenity Suite",
       desc: "Indulge in luxury and ample space in our Spacious Serenity Suite, where tranquility meets roomy elegance.",
       price: 1500,
     },
     {
-      img: "src/assets/room1.jpg",
+      img: room1,
       title: "Spacious Serenity Villa",
       desc: "Indulge in luxury and ample space in our Spacious Serenity Villa, where tranquility meets roomy elegance.",
       price: 1500,
