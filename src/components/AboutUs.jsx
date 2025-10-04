@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import header from "../assets/header.jpg";
 
 const AboutUs = () => {
   return (
@@ -15,7 +16,7 @@ const AboutUs = () => {
             viewport={{ once: true, amount: 0.3 }} // only once when 30% visible
           >
             <img
-              src="src/assets/header.jpg"
+              src={header}
               alt="Kingsukh Guest House"
               className="rounded-lg shadow-lg w-full max-w-md lg:max-w-full object-cover"
             />
